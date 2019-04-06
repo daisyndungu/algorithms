@@ -66,4 +66,17 @@ class BinarySearchTree {
         }
         return 'item not found';
     }
+    
+    dfsPreOrder(node) {
+        // root, left, right
+        if (node === null) return;
+        var output = [];
+        function traverse(node) {
+            output.push(node.data);
+            if (node.left) traverse(node.left);
+            if (node.right) traverse(node.right);
+            return output
+        }
+        return traverse(node);
+    }
 }
