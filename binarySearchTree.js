@@ -40,4 +40,30 @@ class BinarySearchTree {
             return searchTree(node);
         }
     }
+
+    getRootNode() {
+        return this.root
+    }
+
+    breathFirstSearch(node, data) {
+        var queue = [];
+        if (node === null) {
+            return;
+        }
+        queue.push(node);
+        while (queue.length !== 0) {
+            var currentNode = queue[0];
+            if (currentNode.data === data) {
+                return data;
+            }
+            if (currentNode.left !== null) {
+                queue.push(currentNode.left);
+            }
+            if (currentNode.right !== null) {
+                queue.push(currentNode.right);
+            }
+            queue.shift(currentNode);
+        }
+        return 'item not found';
+    }
 }
