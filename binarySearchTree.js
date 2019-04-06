@@ -92,4 +92,17 @@ class BinarySearchTree {
         }
         return traverse(node);
     }
+
+    dfsInOrder(node) {
+        // left, root, right
+        if (node === null) return;
+        var output = [];
+        function traverse(node) {
+            if (node.left) traverse(node.left);
+            output.push(node.data);
+            if (node.right) traverse(node.right);
+            return output
+        }
+        return traverse(node);
+    }
 }
