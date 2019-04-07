@@ -70,7 +70,7 @@ class BinarySearchTree {
     dfsPreOrder(node) {
         // root, left, right
         if (node === null) return;
-        var output = [];
+        let output = [];
         function traverse(node) {
             output.push(node.data);
             if (node.left) traverse(node.left);
@@ -83,7 +83,7 @@ class BinarySearchTree {
     dfsPostOrder(node) {
         // left, right, root
         if (node === null) return;
-        var output = [];
+        let output = [];
         function traverse(node) {
             if (node.left) traverse(node.left);
             if (node.right) traverse(node.right);
@@ -96,7 +96,7 @@ class BinarySearchTree {
     dfsInOrder(node) {
         // left, root, right
         if (node === null) return;
-        var output = [];
+        let output = [];
         function traverse(node) {
             if (node.left) traverse(node.left);
             output.push(node.data);
